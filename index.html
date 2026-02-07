@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Valentine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <p class="eyebrow">💙 A Little Love Note 💙</p>
+      <h1>Will You Be My Valentine?</h1>
+      <p class="subtext">
+        Tap the hearts, make a wish, and watch the sky sparkle.
+      </p>
+
+      <div class="buttons" role="group" aria-label="Valentine response buttons">
+        <button id="yesBtn" class="btn btn-yes">Yes, absolutely!</button>
+        <button id="maybeBtn" class="btn btn-maybe">Maybe...?</button>
+      </div>
+
+      <section class="wish-box" aria-live="polite">
+        <label for="wishInput">Write a sweet wish:</label>
+        <div class="wish-controls">
+          <input
+            id="wishInput"
+            type="text"
+            maxlength="80"
+            placeholder="Like: endless cuddles and milk tea dates"
+          />
+          <button id="sendWish" class="btn btn-send">Send ✨</button>
+        </div>
+        <p id="wishOutput" class="wish-output">Your wish will appear here 🌷</p>
+      </section>
+
+      <p id="message" class="message">I have a blue bouquet waiting for you.</p>
+    </main>
+
+    <div id="heartsLayer" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

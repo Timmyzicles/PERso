@@ -1,0 +1,154 @@
+:root {
+  --bg-1: #eaf5ff;
+  --bg-2: #d7ecff;
+  --card: #ffffffcc;
+  --primary: #4f8ddf;
+  --primary-dark: #2b6fca;
+  --accent: #7bb3f3;
+  --text: #1f3c6d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, var(--bg-1), var(--bg-2));
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.card {
+  width: min(92vw, 620px);
+  background: var(--card);
+  backdrop-filter: blur(3px);
+  border: 2px solid #c3e0ff;
+  border-radius: 24px;
+  box-shadow: 0 14px 45px #3878c333;
+  padding: 2.2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0.4rem 0 0.8rem;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+}
+
+.subtext {
+  margin: 0 auto 1.5rem;
+  max-width: 38ch;
+  color: #355f99;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-yes,
+.btn-send {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.btn-maybe {
+  background: #cfe5ff;
+  color: #275ea8;
+}
+
+.wish-box {
+  background: #f2f9ff;
+  border: 1px solid #c9e4ff;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.wish-controls {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+input {
+  flex: 1;
+  border: 1px solid #b6d8ff;
+  border-radius: 12px;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+.wish-output,
+.message {
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #2b5c9f;
+}
+
+#heartsLayer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  font-size: 1.3rem;
+  animation: floatUp 2.8s linear forwards;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .card {
+    padding: 1.4rem;
+  }
+
+  .wish-controls {
+    flex-direction: column;
+  }
+}
